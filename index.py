@@ -5,6 +5,7 @@ import openai
 import os
 
 CHAT_GPT_APIKEY = os.getenv('CHATGPT_API_KEY')
+CHAT_GPT_APIKEY = st.secrets.CHAT_GPT.APIKEY
 openai.api_key = CHAT_GPT_APIKEY
 
 
