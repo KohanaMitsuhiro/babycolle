@@ -37,7 +37,7 @@ def do_question(question):
     return answer
 
 def do_keyword(question):
-    question = f"{question}　この２つの提案から４つのアイテム毎にキーワードを３つ以上抽出して下さい。。"
+    question = f"{question}　この２つの提案から４つのアイテム毎に、アイテム名とキーワードを３つ以上抽出して下さい。"
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
