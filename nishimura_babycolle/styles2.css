@@ -5,6 +5,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #F5F6F5;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    flex: 1 0 auto; /* この行を追加 */
 }
 
 header {
@@ -51,7 +57,7 @@ header #logo {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 9999;  /* 大きな値を指定 */
+    z-index: 9999;
 }
 
 #nav-menu a {
@@ -89,46 +95,51 @@ section {
     font-size: 2em;
     color: #000;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.7); /* 矢印の背景色を半透明に */
-    padding: 0 10px; /* 矢印の左右にパディングを追加 */
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    padding: 0 10px;
 }
 
 #arrowPrev {
-    left: -10px; /* 矢印を画像に少し被せる */
+    left: -10px;
 }
 
 #arrowNext {
-    right: -10px; /* 矢印を画像に少し被せる */
+    right: -10px;
 }
 
 #conversionButton {
     display: inline-block;
     padding: 20px 40px;
-    background-color: #E95817; /* ボタンの背景色 */
-    color: #fff; /* ボタンの文字色 */
-    text-decoration: none; /* リンクの下線を消す */
-    font-size: 20px; /* フォントサイズ */
-    border-radius: 50px; /* ボーダーラウンド */
-    position: fixed; /* ボタンを相対位置に設定 */
-    bottom: 85px; /* 下からの距離を0に設定 */
-    left: 50%; /* 左から50%の位置に配置 */
-    transform: translateX(-50%); /* ボタンの中心を基準に水平位置を調整 */
-    width: auto; /* ボタンの幅を自動に設定 */
-    white-space: nowrap; /* ボタンのテキストを折り返さないように設定 */
+    background-color: #E95817;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 480px) {
     #conversionButton {
-        font-size: 16px; /* スマホ画面ではフォントサイズを小さくする */
-        padding: 15px 30px; /* スマホ画面ではパディングを小さくする */
+        font-size: 16px;
+        padding: 15px 30px;
     }
 }
 
 @media screen and (min-width: 769px) {
+    #content-wrapper {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 0 20px;  /* 左右のパディングを追加 */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  /* こちらにシャドウを適用 */
+    }
+
     #content {
-        max-width: 480px; /* スマホのデザインをそのままにするための最大幅 */
-        margin: 0 auto; /* 左右のマージンを自動に設定 */
-        background-color: #F5F6F5; /* 左右の余白の背景色 */
+        background-color: #F5F6F5;
     }
 }
 
@@ -139,6 +150,38 @@ footer {
     padding: 10px 0;
     position: fixed;
     bottom: 0;
-    left: 0; /* 左端に固定 */
-    right: 0; /* 右端に固定 */
+    left: 0;
+    right: 0;
+}
+
+.pc_left,
+.pc_right {
+    display: none;
+    background: #fece00;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftImage,
+#rightImage {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+
+@media screen and (min-width: 769px) {
+    .pc_left,
+    .pc_right {
+        display: flex;
+        width: calc((100% - 480px) / 2); /* 画面幅からcontentの幅を引いて2で割る */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pc_left,
+    .pc_right {
+        display: none;
+    }
 }
