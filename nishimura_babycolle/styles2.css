@@ -1,0 +1,187 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F6F5;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    flex: 1 0 auto; /* この行を追加 */
+}
+
+header {
+    background-color: #F5F6F5;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+header #logo {
+    width: 95px;
+    height: 40px;
+}
+
+#hamburger-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#hamburger-menu div {
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+}
+
+#nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+}
+
+#nav-menu a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    margin: 1em 0;
+}
+
+#close-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+main {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#imageContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #000;
+    cursor: pointer;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    padding: 0 10px;
+}
+
+#arrowPrev {
+    left: -10px;
+}
+
+#arrowNext {
+    right: -10px;
+}
+
+#conversionButton {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #E95817;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+    #conversionButton {
+        font-size: 16px;
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #content-wrapper {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 0 20px;  /* 左右のパディングを追加 */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  /* こちらにシャドウを適用 */
+    }
+
+    #content {
+        background-color: #F5F6F5;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.pc_left,
+.pc_right {
+    display: none;
+    background: #fece00;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftImage,
+#rightImage {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+
+@media screen and (min-width: 769px) {
+    .pc_left,
+    .pc_right {
+        display: flex;
+        width: calc((100% - 480px) / 2); /* 画面幅からcontentの幅を引いて2で割る */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pc_left,
+    .pc_right {
+        display: none;
+    }
+}
