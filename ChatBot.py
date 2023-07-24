@@ -235,7 +235,6 @@ def main():
         with st.container():
             st.text_input("入力してね",on_change=on_input_change, key="user_input")
 
-
         # if st.button("もう一度相談する"):
         #     st.experimental_rerun()
 
