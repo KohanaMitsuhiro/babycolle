@@ -4,41 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ベビコレ</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-    <div id="content">
-        <header>
-            <img id="logo" src="logo.png" alt="ロゴ画像">
-            <div id="hamburger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div id="nav-menu" style="display: none;">
-                <div id="close-button">✖</div>
-                <a href="index.html">HOME</a>
-                <a href="#">AIコーデ相談</a>
-                <a href="#">服を探す</a>
-                <a href="#">特集記事</a>
-            </div>  
-        </header>
-        <main>
-            <section>
-                <p>何着せたらいい？で悩まない<br>
-                赤ちゃんもママもうれしいコーデが見つかる</p>
-            </section>
-            <section id="imageContainer">
-                <img id="mainImage" src="image1.png" alt="メイン画像">
-                <div id="arrowPrev" class="arrow">&lt;</div>
-                <div id="arrowNext" class="arrow">&gt;</div>
-            </section>
-            <a id="conversionButton" href="診断ページのURL">まずはAIで赤ちゃんの<br>コーディネート相談</a>
-        </main>
-        <footer>
-            <p>© 2023 baby colle</p>
-        </footer>
+    <div class="pc_left">
+        <img id="leftImage" src="leftImage.png" alt="左の画像">
+    </div>
+    <div id="content-wrapper">
+        <div id="content">
+            <header>
+                <img id="logo" src="logo.png" alt="ロゴ画像">
+                <div id="hamburger-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="nav-menu" style="display: none;">
+                    <div id="close-button">✖</div>
+                    <a href="index.html">HOME</a>
+                    <a href="https://babycolle.streamlit.app/">AIコーデ相談</a>
+                    <a href="#">服を探す</a>
+                    <a href="#">特集記事</a>
+                </div>  
+            </header>
+            <main>
+                <section>
+                    <p>何着せたらいい？で悩まない<br>
+                    赤ちゃんもママもうれしいコーデが見つかる</p>
+                </section>
+                <section id="imageContainer">
+                    <img id="mainImage" src="image1.png" alt="メイン画像">
+                    <div id="arrowPrev" class="arrow">&lt;</div>
+                    <div id="arrowNext" class="arrow">&gt;</div>
+                </section>
+                <a id="conversionButton" href="https://babycolle.streamlit.app/">まずはAIで赤ちゃんの<br>コーディネート相談</a>
+            </main>
+            <footer>
+                <p>© 2023 baby colle</p>
+            </footer>
+        </div>
+    </div>
+    <div class="pc_right">
+        <img id="rightImage" src="rightImage.png" alt="右の画像">
     </div>
 </body>
-<script src="script.js"></script>  <!-- <body>の終了タグの前に移動 -->
+<script src="script.js"></script>
 </html>
